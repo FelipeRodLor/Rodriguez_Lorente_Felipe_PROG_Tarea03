@@ -122,5 +122,6 @@ public class Entrada {
             } while (!leido);
             return valor.charAt(0);
 	}
+       
 
 }
