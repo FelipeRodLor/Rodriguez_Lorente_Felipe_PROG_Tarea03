@@ -6,13 +6,30 @@
 package tarea03;
 
 /**
- * 
- * 
+ *
+ *
  * @author Felipillo
  */
 public class Posicion {
+
     private int fila;
     private char columna;
-                
-    
+
+    public Posicion(int fila, char columna) {
+
+        if (fila <= 8 && fila >= 1) {
+            this.fila = fila;
+        } else {
+            this.fila = 1;
+            System.out.println("Fila incorrecta, se le ha asignado la fila 1 por defecto");
+
+        }
+
+        if (columna == 'a' || columna == 'b' || columna == 'd' || columna == 'e' || columna == 'f' || columna == 'g' || columna == 'h') {
+            this.columna = columna;
+        } else {
+            this.columna = 'a';
+            System.out.println("Columna incorrecta, se le ha asignado la columna a por defecto");
+        }
+    }
 }
