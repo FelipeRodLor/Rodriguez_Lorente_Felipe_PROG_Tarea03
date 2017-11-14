@@ -41,4 +41,11 @@ public class Rey {
         return posicion;
     }
 
+    public String toString() {
+
+        String representacion = color + " " + posicion;
+
+        return representacion;
+    }
+
 }
