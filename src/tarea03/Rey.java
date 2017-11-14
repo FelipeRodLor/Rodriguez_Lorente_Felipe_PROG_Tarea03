@@ -32,4 +32,13 @@ public class Rey {
     public Rey() {
         color = Color.BLANCO;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public Posicion getPosicion() {
+        return posicion;
+    }
+
 }
