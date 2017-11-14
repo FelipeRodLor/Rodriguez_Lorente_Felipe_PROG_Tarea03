@@ -61,4 +61,10 @@ public class Posicion {
         }
     }
 
+    public String toString() {
+
+        return Integer.toString(fila, columna);
+
+    }
+
 }
