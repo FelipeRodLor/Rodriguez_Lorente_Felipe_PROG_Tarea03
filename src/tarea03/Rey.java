@@ -28,4 +28,8 @@ public class Rey {
         }
 
     }
+
+    public Rey() {
+        color = Color.BLANCO;
+    }
 }
