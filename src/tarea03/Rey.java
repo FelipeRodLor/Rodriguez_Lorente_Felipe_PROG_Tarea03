@@ -11,9 +11,21 @@ package tarea03;
  */
 public class Rey {
 
-    private Color BLANCO;
-    private Color NEGRO;
-    private Posicion FILA;
-    private Posicion COLUMNA;
+    private Color color;
+    private Posicion posicion;
 
+    public Rey(Color color) {
+        switch (color) {
+            case BLANCO:
+                this.color = Color.BLANCO;
+                this.posicion = new Posicion(1, 'e');
+                break;
+            case NEGRO:
+                this.color = Color.NEGRO;
+                this.posicion = new Posicion(8, 'e');
+                break;
+
+        }
+
+    }
 }
