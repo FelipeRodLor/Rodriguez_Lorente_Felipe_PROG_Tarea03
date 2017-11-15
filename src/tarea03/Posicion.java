@@ -36,7 +36,7 @@ public class Posicion {
         if (columna >= 65 && columna <= 72) {
             this.columna = columna;
         } else {
-            this.columna = 'a';
+            this.columna = 'A';
             System.out.println("Columna incorrecta, se le ha asignado la columna a por defecto");
         }
     }
