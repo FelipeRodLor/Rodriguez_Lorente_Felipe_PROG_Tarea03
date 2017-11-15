@@ -33,7 +33,7 @@ public class Posicion {
 
         }
 
-        if (columna == 'a' || columna == 'b' || columna == 'd' || columna == 'e' || columna == 'f' || columna == 'g' || columna == 'h') {
+        if (columna >= 65 && columna <= 72) {
             this.columna = columna;
         } else {
             this.columna = 'a';
@@ -83,9 +83,9 @@ public class Posicion {
      *
      * @param columna
      */
-
     public void setColumna(char columna) {
-        if (columna == 'a' || columna == 'b' || columna == 'd' || columna == 'e' || columna == 'f' || columna == 'g' || columna == 'h') {
+
+        if (columna >= 65 && columna <= 72) {
             this.columna = columna;
         } else {
             this.columna = 'a';

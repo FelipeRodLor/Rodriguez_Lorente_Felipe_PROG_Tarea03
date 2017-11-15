@@ -13,6 +13,7 @@ public class Rey {
 
     private Color color;
     private Posicion posicion;
+    private Direccion direccion;
 
     public Rey(Color color) {
         switch (color) {
@@ -48,4 +49,82 @@ public class Rey {
         return representacion;
     }
 
+    public void mueve(Direccion direccion) {
+
+        int fila = posicion.getFila();
+        int columna = posicion.getColumna();
+
+        switch (direccion) {
+
+            case SUR:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getFila() + 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case NORTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getFila() - 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case ESTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getColumna() + 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case OESTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getColumna() - 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case NORESTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getFila() - 1;
+                    columna = posicion.getColumna() + 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case SURESTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getFila() + 1;
+                    columna = posicion.getColumna() + 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case SUROESTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getFila() + 1;
+                    columna = posicion.getColumna() - 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+            case NOROESTE:
+                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
+                    fila = posicion.getFila() - 1;
+                    columna = posicion.getColumna() - 1;
+                } else {
+                    System.out.println("Movimiento incorrecto, el rey se sale del tablero");
+                }
+                break;
+
+        }
+
+    }
 }
