@@ -41,6 +41,7 @@ public class Rey {
      */
     public Rey() {
         color = Color.BLANCO;
+
     }
 
     /**
@@ -68,18 +69,18 @@ public class Rey {
      */
     public String toString() {
 
-        String representacion = color + " " + posicion;
+        String representacion = color + " " + posicion.getFila() + posicion.getColumna();
 
         return representacion;
     }
 
     /**
      * Metodo para ir actualizando la posicion que va tomando el Rey segun la
-     * direccion.
+     * direccion. Se valida que el rey no se salga del tablero, en dicho caso se
+     * le informa al usuario.
      *
      * @param direccion
      */
-
     public void mueve(Direccion direccion) {
 
         int fila = posicion.getFila();
@@ -88,68 +89,83 @@ public class Rey {
         switch (direccion) {
 
             case SUR:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getFila() + 1;
+                if (fila < 8) {
+                    fila = fila + 1;
+                    posicion.setFila(fila);
+
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
                 break;
 
             case NORTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getFila() - 1;
+                if (fila > 1) {
+                    fila = fila - 1;
+                    posicion.setFila(fila);
+
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
                 break;
 
             case ESTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getColumna() + 1;
+                if (columna < 72) {
+                    columna = columna + 1;
+                    posicion.setColumna((char) columna);
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
+
                 break;
 
             case OESTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getColumna() - 1;
+                if (columna > 65) {
+                    columna = columna - 1;
+                    posicion.setColumna((char) columna);
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
                 break;
 
             case NORESTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getFila() - 1;
-                    columna = posicion.getColumna() + 1;
+                if ((columna < 72) && (fila > 1)) {
+                    fila = fila - 1;
+                    columna = columna + 1;
+                    posicion.setColumna((char) columna);
+                    posicion.setFila(fila);
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
                 break;
 
             case SURESTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getFila() + 1;
-                    columna = posicion.getColumna() + 1;
+                if ((columna < 72) && (fila < 8)) {
+                    fila = fila + 1;
+                    columna = columna + 1;
+                    posicion.setColumna((char) columna);
+                    posicion.setFila(fila);
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
                 break;
 
             case SUROESTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getFila() + 1;
-                    columna = posicion.getColumna() - 1;
+                if ((columna > 65) && (fila < 8)) {
+                    fila = fila + 1;
+                    columna = columna - 1;
+                    posicion.setColumna((char) columna);
+                    posicion.setFila(fila);
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
                 break;
 
             case NOROESTE:
-                if ((columna >= 65 && columna <= 72) && (fila <= 8 && fila >= 1)) {
-                    fila = posicion.getFila() - 1;
-                    columna = posicion.getColumna() - 1;
+                if ((columna < 72) && (fila > 1)) {
+                    fila = fila - 1;
+                    columna = columna - 1;
+                    posicion.setColumna((char) columna);
+                    posicion.setFila(fila);
                 } else {
                     System.out.println("Movimiento incorrecto, el rey se sale del tablero");
                 }
